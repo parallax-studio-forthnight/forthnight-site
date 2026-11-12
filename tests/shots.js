@@ -40,6 +40,13 @@ async function settle(page) {
     await page.screenshot({ path: path.join(out, '03-1440-privacy.png'), fullPage: true });
     await ctx.close();
 
+    // 2b. 768 px volledig
+    ctx = await browser.newContext({ viewport: { width: 768, height: 1024 }, reducedMotion: 'reduce' });
+    page = await ctx.newPage();
+    await page.goto(base, { waitUntil: 'networkidle' }); await settle(page);
+    await page.screenshot({ path: path.join(out, '04-768-volledig.png'), fullPage: true });
+    await ctx.close();
+
     // 3. 390 px
     ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce', isMobile: true, hasTouch: true });
     page = await ctx.newPage();

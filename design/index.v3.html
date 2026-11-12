@@ -14,6 +14,12 @@ body{margin:0}
 a{color:#0A4A2B}a:hover{color:#06301C}
 [hidden]{display:none !important}
 :focus-visible{outline:2px solid #0A4A2B;outline-offset:3px}
+h1,h2,h3,p[style*="Space Grotesk"],p[style*="text-transform: uppercase"]{text-wrap:balance}
+p,li,label{text-wrap:pretty}
+#hoe p,ul li{text-wrap:balance}
+#start,#vragen{scroll-margin-top:24px}
+[data-demo]{scroll-margin-top:16px}
+[data-step-head]:focus,[data-step-head]:focus-visible{outline:none}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -76,7 +82,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 <p style="margin: 0; font-size: 18px; color: #3B4A42">Eén route als voorbeeld, met een verzonnen factuur. Je hoeft hier niets te uploaden. In jouw eigen sessie doen we dit samen, voor elke route van bestelling tot geld.</p>
 </div>
 
-<div style="background: #FFFFFF; border: 1px solid #D5DDD8; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(11, 31, 21, 0.08)">
+<div data-demo style="background: #FFFFFF; border: 1px solid #D5DDD8; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(11, 31, 21, 0.08)">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 28px; border-bottom: 1px solid #E3E9E5">
 <div style="display: flex; flex-direction: column; gap: 2px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #55655C">Route: inkoop</p>
@@ -101,14 +107,14 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 </div>
 <p style="margin: 0; font-size: 14px; color: #55655C">Uw klantnummer: 10482</p>
 <div style="display: flex; flex-direction: column; font-size: 15px">
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>12 x artikel 4471 à € 38,50</span><span>€ 462,00</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Korting 6%</span><span>- € 27,72</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Verzekering</span><span>€ 9,03</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #0B1F15; font-weight: 600"><span>Totaal excl. btw</span><span>€ 443,31</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>12&nbsp;x artikel 4471 à €&nbsp;38,50</span><span>€&nbsp;462,00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Korting 6%</span><span>- €&nbsp;27,72</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Verzekering</span><span>€&nbsp;9,03</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #0B1F15; font-weight: 600"><span>Totaal excl. btw</span><span>€&nbsp;443,31</span></div>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
-<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Een factuur van je leverancier komt binnen. Wat gebeurt er dan?</p>
+<p data-step-head tabindex="-1" style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Een factuur van je leverancier komt binnen. Wat gebeurt er dan?</p>
 <p style="margin: 0; font-size: 16px; color: #3B4A42">Kijk waar elk gegeven in je systeem terechtkomt, en welke vraag er overblijft.</p>
 <button type="button" data-act="next" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #0A4A2B; border: 0; border-radius: 999px; padding: 14px 24px; min-height: 48px; cursor: pointer">Lees de voorbeeldfactuur uit</button>
 </div>
@@ -117,7 +123,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 
 <div data-if="isStep1" hidden>
 <div style="display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Dit lazen we op je factuur.</p>
+<p data-step-head tabindex="-1" style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Dit lazen we op je factuur.</p>
 <div style="display: flex; flex-direction: column">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
 <p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">Voorbeeld Leverancier B.V.</p>
@@ -130,7 +136,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 <span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Bestaat</span>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
-<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">12 x artikel 4471 à € 38,50</p>
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">12&nbsp;x artikel 4471 à €&nbsp;38,50</p>
 <p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Regel, gekoppeld aan je bestelling</p>
 <span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Bestaat</span>
 </div>
@@ -155,7 +161,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 <div data-if="isStep2" hidden>
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 680px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #B00208">Eén regel heeft nog geen plek</p>
-<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Op je factuur staat "Verzekering € 9,03". Hoort dat bij de kostprijs van de artikelen, of boek je het als kosten?</p>
+<p data-step-head tabindex="-1" style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Op je factuur staat “Verzekering €&nbsp;9,03”. Hoort dat bij de kostprijs van de artikelen, of boek je het als kosten?</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <button type="button" data-act="pickKostprijs" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #0B1F15; background: #FFFFFF; border: 1px solid #0A4A2B; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer">In de kostprijs</button>
 <button type="button" data-act="pickKosten" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #0B1F15; background: #FFFFFF; border: 1px solid #0A4A2B; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer">Als kosten</button>
@@ -166,7 +172,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 
 <div data-if="isStep3" hidden>
 <div style="display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Vastgelegd in je blauwdruk.</p>
+<p data-step-head tabindex="-1" style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Vastgelegd in je blauwdruk.</p>
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
 <li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px">Korting van de leverancier komt per regel mee.</span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span></li>
 <li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px">Jouw klantnummer bij de leverancier krijgt een eigen veld.</span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span></li>
@@ -191,7 +197,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 
 <section style="max-width: 1120px; margin: 0 auto; padding: 112px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px; align-items: start">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(5rem, 12vw, 9rem); line-height: 0.9; letter-spacing: -0.04em; color: #0A4A2B">71</p>
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(5rem, 12vw, 9rem); line-height: 0.9; letter-spacing: 0; color: #0A4A2B">71</p>
 <p style="margin: 0; font-size: 18px; font-weight: 500; max-width: 360px">besluiten kwamen bij onze laatste implementatie nog boven tafel. Na een compleet interview.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 20px">
@@ -281,21 +287,18 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 </div>
 <div style="display: flex; flex-direction: column">
 <div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5">
-<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">D</span>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Dennis</h3>
 <p style="margin: 0; font-size: 17px; color: #3B4A42">Doet je intake en bouwt je systeem. Leidde de overstap naar één systeem bij de groothandel waar we vandaan komen.</p>
 </div>
 </div>
 <div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5">
-<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">D</span>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Derk</h3>
 <p style="margin: 0; font-size: 17px; color: #3B4A42">Kent de dagelijkse gang van zaken in een groothandel. Controleert elke blauwdruk voordat jij hem ziet.</p>
 </div>
 </div>
 <div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5">
-<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">K</span>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Koen</h3>
 <p style="margin: 0; font-size: 17px; color: #3B4A42">Kent de klantkant van de handel van binnenuit. Je eerste aanspreekpunt.</p>
@@ -325,7 +328,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 </div>
 <div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Ik heb al een ERP. Kan dat?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Ja. We kijken wat goed werkt en wat je tegenhoudt. Je bestaande webshop kan gekoppeld blijven. Wat vroeger "kan niet" was, bouwen we nu gewoon.</p>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Ja. We kijken wat goed werkt en wat je tegenhoudt. Je bestaande webshop kan gekoppeld blijven. Wat vroeger “kan niet” was, bouwen we nu gewoon.</p>
 </div>
 <div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe kan het zo snel?</h3>
@@ -340,7 +343,7 @@ a{color:#0A4A2B}a:hover{color:#06301C}
 
 <section style="background: #0B1F15; color: #FFFFFF; padding: 112px 24px">
 <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
-<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.4vw, 4rem); line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance">Eerst zien. Dan pas tekenen.</h2>
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.4vw, 4rem); line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance">Eerst zien.<br>Dan pas tekenen.</h2>
 <p style="margin: 0; font-size: 19px; color: #D3DCD7">Een paar zinnen over je bedrijf is genoeg om te beginnen.</p>
 <a href="#start" style="font-size: 17px; font-weight: 600; text-decoration: none; color: #0B1F15; background: #FFFFFF; padding: 16px 28px; border-radius: 999px">Vertel hoe je werkt</a>
 </div>
@@ -375,12 +378,21 @@ a{color:#0A4A2B}a:hover{color:#06301C}
       if (i === step) pill.setAttribute('aria-current', 'step'); else pill.removeAttribute('aria-current');
     }
   }
+  // Na een stapwissel: kaart terug in beeld als de bovenkant boven het venster is gevallen, daarna focus op de kop van de nieuwe stap.
+  // Zacht scrollen volgt html{scroll-behavior}; bij prefers-reduced-motion is dat direct.
+  function reveal() {
+    var card = document.querySelector('[data-demo]');
+    var head = document.querySelector('[data-if="isStep' + step + '"] [data-step-head]');
+    var above = card && card.getBoundingClientRect().top < 0;
+    if (above) card.scrollIntoView({ block: 'start' });
+    if (head) head.focus({ preventScroll: above });
+  }
   var actions = {
     start: function (btn) { show('started', true); btn.textContent = 'Verstuur'; btn.dataset.act = 'send'; document.getElementById('naam').focus(); },
-    next: function () { step = Math.min(step + 1, 3); render(); },
-    pickKostprijs: function () { document.getElementById('choice').textContent = texts.kostprijs; step = 3; render(); },
-    pickKosten: function () { document.getElementById('choice').textContent = texts.kosten; step = 3; render(); },
-    reset: function () { step = 0; render(); }
+    next: function () { step = Math.min(step + 1, 3); render(); reveal(); },
+    pickKostprijs: function () { document.getElementById('choice').textContent = texts.kostprijs; step = 3; render(); reveal(); },
+    pickKosten: function () { document.getElementById('choice').textContent = texts.kosten; step = 3; render(); reveal(); },
+    reset: function () { step = 0; render(); reveal(); }
   };
   document.addEventListener('click', function (e) {
     var chip = e.target.closest('[data-chip]');

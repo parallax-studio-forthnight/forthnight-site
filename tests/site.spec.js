@@ -335,19 +335,39 @@ test.describe('pixelvergelijking met design/index.v3.html op 1440 px', () => {
     await page.mouse.move(0, 0);
     // Lettertypes laden pas als een gewicht zichtbaar wordt: wacht opnieuw na het wisselen van stap.
     await page.evaluate(async () => { await document.fonts.load("600 16px 'Space Grotesk'"); await document.fonts.load('600 16px Inter'); await document.fonts.load('500 16px Inter'); await document.fonts.ready; await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))); });
-    const buf = await page.screenshot({ path: file, fullPage: true, animations: 'disabled' });
+    // Het ontwerp laadt lettertypen van Google met font-display: swap. Wacht tot twee opnamen achter elkaar gelijk zijn.
+    let buf = await page.screenshot({ fullPage: true, animations: 'disabled' });
+    for (let i = 0; i < 10; i++) {
+      await page.waitForTimeout(150);
+      const next = await page.screenshot({ fullPage: true, animations: 'disabled' });
+      const same = next.equals(buf);
+      buf = next;
+      if (same) break;
+    }
+    fs.writeFileSync(file, buf);
     await page.close();
     return PNG.sync.read(buf);
   }
   for (const state of [...STATES, 'started']) {
     test(`gelijk in toestand ${state}`, async ({ browser, baseURL }) => {
       fs.mkdirSync(outDir, { recursive: true });
-      const a = await shot(browser, baseURL, LOCAL + '/design/index.v3.html', state, path.join(outDir, `${state}-design.png`));
+      // De site zelf rendert elke keer identiek (zie tests/stable.js). Het ontwerp haalt zijn lettertypen nog bij Google
+      // en rendert daardoor op twee manieren: komt een lettertype na de eerste weergave binnen, dan verschuiven de
+      // subpixels van de tekst. De layout is in beide gevallen gelijk. Daarom: de site moet pixelgelijk zijn aan een
+      // opname van het ontwerp; het ontwerp krijgt hooguit acht pogingen.
       const b = await shot(browser, baseURL, './', state, path.join(outDir, `${state}-index.png`));
-      expect({ w: b.width, h: b.height }).toEqual({ w: a.width, h: a.height });
-      const diff = new PNG({ width: a.width, height: a.height });
-      const n = pixelmatch(a.data, b.data, diff.data, a.width, a.height, { threshold: 0.1 });
-      fs.writeFileSync(path.join(outDir, `${state}-diff.png`), PNG.sync.write(diff));
+      let n = -1;
+      let attempts = 0;
+      while (n !== 0 && attempts < 8) {
+        attempts++;
+        const a = await shot(browser, baseURL, LOCAL + '/design/index.v3.html', state, path.join(outDir, `${state}-design.png`));
+        expect({ w: b.width, h: b.height }).toEqual({ w: a.width, h: a.height });
+        const diff = new PNG({ width: a.width, height: a.height });
+        n = pixelmatch(a.data, b.data, diff.data, a.width, a.height, { threshold: 0.1 });
+        fs.writeFileSync(path.join(outDir, `${state}-diff.png`), PNG.sync.write(diff));
+      }
+      test.info().annotations.push({ type: 'pogingen ontwerp', description: String(attempts) });
+      console.log(`pixelvergelijking ${state}: 0 afwijkende pixels na ${attempts} opname(n) van het ontwerp`.replace('0 afwijkende', n + ' afwijkende'));
       expect(n, `afwijkende pixels in ${state}`).toBe(0);
     });
   }
@@ -449,6 +469,48 @@ for (const width of [390, 360]) {
       await page.getByRole('button', { name: 'Opnieuw' }).click();
       await demo.goto(page, 'step3-kosten');
       await run('stap 4 kosten');
+    });
+
+    test('demo: na een stapwissel staat de kaart weer in beeld en heeft de kop van de nieuwe stap focus', async ({ page }) => {
+      await ready(page);
+      const card = page.locator('[data-demo]');
+      const head = (i) => page.locator(`[data-if="isStep${i}"] [data-step-head]`);
+      const cardTop = async () => Math.round((await card.boundingBox()).y);
+      expect(await card.evaluate((el) => getComputedStyle(el).scrollMarginTop)).toBe('16px');
+      const stappen = [['Lees de voorbeeldfactuur uit', 1], ['Verder', 2], ['Als kosten', 3], ['Opnieuw', 0]];
+      for (const [knop, i] of stappen) {
+        const btn = page.getByRole('button', { name: knop });
+        await btn.scrollIntoViewIfNeeded();
+        // zet de knop onderaan het venster, zodat de bovenkant van de kaart zo ver mogelijk uit beeld is
+        await btn.evaluate((el) => el.scrollIntoView({ block: 'end' }));
+        const before = await cardTop();
+        await btn.click();
+        await expect(head(i)).toBeFocused();
+        await expect(head(i)).toBeInViewport({ ratio: 1 });
+        if (before < 0) expect(await cardTop(), `kaart na "${knop}"`).toBe(16);
+        expect(await head(i).evaluate((el) => getComputedStyle(el).outlineStyle)).toBe('none');
+        expect(await head(i).getAttribute('tabindex')).toBe('-1');
+      }
+      // "Verder" in stap 2 is de eis uit de review: daar valt de kaart echt boven het venster
+      await page.getByRole('button', { name: 'Lees de voorbeeldfactuur uit' }).click();
+      const verder = page.getByRole('button', { name: 'Verder' });
+      await verder.evaluate((el) => el.scrollIntoView({ block: 'end' }));
+      expect(await cardTop()).toBeLessThan(0);
+      await verder.click();
+      await expect(head(2)).toBeInViewport({ ratio: 1 });
+      await expect(head(2)).toBeFocused();
+      expect(await cardTop()).toBe(16);
+    });
+
+    test('demo: staat de kaart al in beeld, dan verspringt de pagina niet', async ({ page }) => {
+      await page.setViewportSize({ width, height: 1600 }); // hoog venster: kaart en knop passen samen in beeld
+      await ready(page);
+      await page.locator('[data-demo]').evaluate((el) => el.scrollIntoView({ block: 'start' }));
+      await page.evaluate(() => window.scrollBy(0, -60));
+      const y = await page.evaluate(() => window.scrollY);
+      await page.getByRole('button', { name: 'Lees de voorbeeldfactuur uit' }).click();
+      await expect(page.locator('[data-if="isStep1"] [data-step-head]')).toBeFocused();
+      expect(await page.evaluate(() => window.scrollY)).toBe(y);
     });
 
     test('contactvelden staan onder elkaar en passen in beeld', async ({ page }) => {
