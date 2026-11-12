@@ -1,0 +1,5 @@
+Inter: Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
+Space Grotesk: Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+
+Beide lettertypen vallen onder de SIL Open Font License, versie 1.1: https://openfontlicense.org/open-font-license-official-text/
+De bestanden zijn variabele lettertypen: Inter dekt gewicht 400, 500 en 600, Space Grotesk dekt 500, 600 en 700.

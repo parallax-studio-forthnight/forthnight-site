@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forthnight | Zie je bedrijf werken voordat je tekent</title>
+<meta name="description" content="ERP voor handel en retail. Klik door je eigen werkdag voordat je tekent. Eén vaste prijs, live in weken.">
+<link rel="canonical" href="https://forthnightagency.nl/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0A4A2B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Forthnight">
+<meta property="og:url" content="https://forthnightagency.nl/">
+<meta property="og:title" content="Forthnight | Zie je bedrijf werken voordat je tekent">
+<meta property="og:description" content="ERP voor handel en retail. Klik door je eigen werkdag voordat je tekent. Eén vaste prijs, live in weken.">
+<meta property="og:image" content="https://forthnightagency.nl/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Forthnight: zie je bedrijf werken voordat je tekent">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:#0A4A2B}a:hover{color:#06301C}
+[hidden]{display:none !important}
+:focus-visible{outline:2px solid #0A4A2B;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{font-size:15px;color:#0B1F15}
+.form-status.is-error{color:#B00208;font-weight:500}
+.form-status.is-done{font-size:17px;padding:8px 0}
+.form-status.is-done strong{display:block;font-family:'Space Grotesk',Inter,sans-serif;font-size:24px;font-weight:600;line-height:1.2;margin-bottom:8px}
+.form-status:focus{outline:none}
+[aria-invalid="true"]{border-color:#B00208 !important}
+textarea[aria-invalid="true"]{outline:2px solid #B00208}
+@media (max-width: 639px){
+header{flex-wrap:nowrap !important}
+header img{height:40px !important}
+header nav{flex-wrap:nowrap !important}
+header nav a:not([href="#start"]){display:none !important}
+h1,h2,h3,p[style*="Space Grotesk"]{text-wrap:balance}
+[style*="font-size: 13px"]{font-size:14px !important}
+p[style*="font-size: 26px"]{font-size:22px !important}
+.demo-head{padding:20px !important}
+.demo-pills{flex-wrap:nowrap !important;gap:6px !important}
+[data-pill]{padding:8px 12px !important;white-space:nowrap}
+[data-pill] span + span{display:none}
+[data-pill][aria-current="step"] span + span{display:inline}
+}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #0B1F15; background: #FFFFFF; line-height: 1.5">
+
+<header style="max-width: 1120px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" aria-label="Forthnight, naar boven" style="display: flex; align-items: center">
+<img src="assets/forthnight-logo.png" alt="Forthnight" width="1026" height="570" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+<a href="#voorbeeld" style="font-size: 15px; font-weight: 500; text-decoration: none; color: #3B4A42; padding: 12px 0">Probeer het</a>
+<a href="#hoe" style="font-size: 15px; font-weight: 500; text-decoration: none; color: #3B4A42; padding: 12px 0">Hoe het werkt</a>
+<a href="#vragen" style="font-size: 15px; font-weight: 500; text-decoration: none; color: #3B4A42; padding: 12px 0">Vragen</a>
+<a href="#start" style="font-size: 15px; font-weight: 600; text-decoration: none; color: #FFFFFF; background: #0A4A2B; padding: 12px 20px; border-radius: 999px">Start</a>
+</nav>
+</header>
+
+<main>
+<section id="top" style="max-width: 920px; margin: 0 auto; padding: 88px 24px 104px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">ERP voor handel en retail</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2.5rem, 6.4vw, 4.75rem); line-height: 1.02; letter-spacing: -0.035em; color: #0B1F15; text-wrap: balance">Zie je bedrijf werken voordat je tekent.</h1>
+<p style="margin: 0; max-width: 660px; font-size: 20px; color: #3B4A42; text-wrap: pretty">Vertel hoe je werkt en stuur een paar documenten mee. Je klikt door je eigen werkdag, met je eigen klanten, artikelen en facturen. Klopt het, dan krijg je één vaste prijs en ben je in weken live.</p>
+
+<form id="start" action="https://formspree.io/f/VERVANG_MIJ" method="POST" accept-charset="utf-8" style="width: 100%; max-width: 720px; margin-top: 16px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5DDD8; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px; text-align: left; box-shadow: 0 24px 60px rgba(11, 31, 21, 0.10)">
+<label for="intake" style="font-size: 15px; font-weight: 600; color: #0B1F15">Hoe werkt jouw bedrijf nu?</label>
+<textarea id="intake" rows="3" name="bericht" required placeholder="Een paar zinnen is genoeg. Wat verkoop je, aan wie, en waar loopt het nu vast?" style="width: 100%; box-sizing: border-box; border: 0; outline-offset: 4px; resize: vertical; font-family: inherit; font-size: 17px; line-height: 1.5; color: #0B1F15; background: transparent; padding: 4px 0"></textarea>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" data-chip="Groothandel met 12 man en 4.000 artikelen. Orders komen binnen via mail en webshop, de voorraad staat in Excel en de boekhouding in een los pakket." style="font-family: inherit; font-size: 14px; font-weight: 500; color: #0B1F15; background: #F4F7F5; border: 1px solid #D5DDD8; border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer">Groothandel</button>
+<button type="button" data-chip="Winkel met kassa en een webshop ernaast. Voorraad houden we op twee plekken bij en dat loopt steeds uit elkaar." style="font-family: inherit; font-size: 14px; font-weight: 500; color: #0B1F15; background: #F4F7F5; border: 1px solid #D5DDD8; border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer">Winkel met webshop</button>
+<button type="button" data-chip="We werken al jaren met een ERP, maar elke aanpassing is duur en traag. Er is veel Excel omheen gegroeid." style="font-family: inherit; font-size: 14px; font-weight: 500; color: #0B1F15; background: #F4F7F5; border: 1px solid #D5DDD8; border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer">Ik heb al een ERP</button>
+</div>
+<div data-if="started">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px; border-top: 1px solid #E3E9E5; padding-top: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="naam" style="font-size: 14px; font-weight: 600; color: #0B1F15">Naam</label>
+<input id="naam" name="naam" type="text" autocomplete="name" required style="box-sizing: border-box; width: 100%; min-height: 48px; border: 1px solid #C5CFC9; border-radius: 12px; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0B1F15; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="email" style="font-size: 14px; font-weight: 600; color: #0B1F15">E-mailadres</label>
+<input id="email" name="email" type="email" autocomplete="email" required style="box-sizing: border-box; width: 100%; min-height: 48px; border: 1px solid #C5CFC9; border-radius: 12px; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0B1F15; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="telefoon" style="font-size: 14px; font-weight: 600; color: #0B1F15">Telefoon <span style="font-weight: 400; color: #55655C">(mag, hoeft niet)</span></label>
+<input id="telefoon" name="telefoon" type="tel" autocomplete="tel" style="box-sizing: border-box; width: 100%; min-height: 48px; border: 1px solid #C5CFC9; border-radius: 12px; padding: 0 14px; font-family: inherit; font-size: 16px; color: #0B1F15; background: #FFFFFF">
+</div>
+</div>
+</div>
+<div class="hp" aria-hidden="true">
+<label for="website">Laat dit veld leeg</label>
+<input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+</div>
+<input type="hidden" name="_subject" value="Nieuwe intake via forthnightagency.nl">
+<div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+<div data-form-bar style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #E3E9E5; padding-top: 14px">
+<p style="margin: 0; font-size: 14px; color: #55655C">Reactie binnen één werkdag, per mail of telefoon. Vrijblijvend.</p>
+<button type="submit" data-act="start" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #0A4A2B; border: 0; border-radius: 999px; padding: 14px 24px; min-height: 48px; cursor: pointer">Verstuur</button>
+</div>
+</form>
+<script>
+(function () {
+  var f = document.getElementById('start');
+  f.querySelector('[data-if="started"]').hidden = true;
+  f.querySelector('[data-act="start"]').textContent = 'Start';
+  f.noValidate = true;
+})();
+</script>
+</section>
+
+<section id="voorbeeld" style="background: #F4F7F5; padding: 96px 0">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Probeer het</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance">Zo klik je straks door je eigen bedrijf.</h2>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Eén route als voorbeeld, met een verzonnen factuur. Je hoeft hier niets te uploaden. In jouw eigen sessie doen we dit samen, voor elke route van bestelling tot geld.</p>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #D5DDD8; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(11, 31, 21, 0.08)">
+<div class="demo-head" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 28px; border-bottom: 1px solid #E3E9E5">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #55655C">Route: inkoop</p>
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 20px; font-weight: 600">Factuur van je leverancier inlezen</p>
+</div>
+<ol class="demo-pills" aria-label="Stappen" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+<li data-pill="0" aria-current="step" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 8px 14px; border: 1px solid #0A4A2B; background: #0A4A2B; color: #FFFFFF"><span>1</span><span>Document</span></li>
+<li data-pill="1" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 8px 14px; border: 1px solid #D5DDD8; background: #FFFFFF; color: #55655C"><span>2</span><span>Uitgelezen</span></li>
+<li data-pill="2" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 8px 14px; border: 1px solid #D5DDD8; background: #FFFFFF; color: #55655C"><span>3</span><span>Jouw keuze</span></li>
+<li data-pill="3" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 8px 14px; border: 1px solid #D5DDD8; background: #FFFFFF; color: #55655C"><span>4</span><span>Blauwdruk</span></li>
+</ol>
+</div>
+
+<div style="padding: 32px 28px; min-height: 380px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center">
+
+<div data-if="isStep0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 40px; align-items: center">
+<div style="background: #FBFCFB; border: 1px solid #D5DDD8; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 8px 24px rgba(11, 31, 21, 0.06)">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<p style="margin: 0; font-size: 15px; font-weight: 600">Voorbeeld Leverancier B.V.</p>
+<p style="margin: 0; font-size: 15px; color: #3B4A42">Factuur 2026-0418</p>
+</div>
+<p style="margin: 0; font-size: 14px; color: #55655C">Uw klantnummer: 10482</p>
+<div style="display: flex; flex-direction: column; font-size: 15px">
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>12&nbsp;x artikel 4471 à €&nbsp;38,50</span><span>€&nbsp;462,00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Korting 6%</span><span>- €&nbsp;27,72</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #E3E9E5"><span>Verzekering</span><span>€&nbsp;9,03</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid #0B1F15; font-weight: 600"><span>Totaal excl. btw</span><span>€&nbsp;443,31</span></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Een factuur van je leverancier komt binnen. Wat gebeurt er dan?</p>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">Kijk waar elk gegeven in je systeem terechtkomt, en welke vraag er overblijft.</p>
+<button type="button" data-act="next" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #0A4A2B; border: 0; border-radius: 999px; padding: 14px 24px; min-height: 48px; cursor: pointer">Lees de voorbeeldfactuur uit</button>
+</div>
+</div>
+</div>
+
+<div data-if="isStep1" hidden>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Dit lazen we op je factuur.</p>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">Voorbeeld Leverancier B.V.</p>
+<p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Leverancier</p>
+<span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Bestaat</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">Factuur 2026-0418</p>
+<p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Referentie op de inkoopfactuur</p>
+<span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Bestaat</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">12&nbsp;x artikel 4471 à €&nbsp;38,50</p>
+<p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Regel, gekoppeld aan je bestelling</p>
+<span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Bestaat</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">Korting 6%</p>
+<p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Korting per regel</p>
+<span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5">
+<p style="margin: 0; flex: 1 1 240px; font-size: 16px; font-weight: 500">Klantnummer 10482</p>
+<p style="margin: 0; flex: 1 1 200px; font-size: 16px; color: #3B4A42">Nieuw veld op de leverancier</p>
+<span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<p style="margin: 0; font-size: 14px; color: #55655C">Bestaat: zit er al in. Instelling: minuten werk. Maatwerk: bouwen we, en je ziet of het in de prijs zit.</p>
+<button type="button" data-act="next" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #0A4A2B; border: 0; border-radius: 999px; padding: 14px 24px; min-height: 48px; cursor: pointer">Verder</button>
+</div>
+</div>
+</div>
+
+<div data-if="isStep2" hidden>
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 680px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #B00208">Eén regel heeft nog geen plek</p>
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.2">Op je factuur staat "Verzekering €&nbsp;9,03". Hoort dat bij de kostprijs van de artikelen, of boek je het als kosten?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" data-act="pickKostprijs" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #0B1F15; background: #FFFFFF; border: 1px solid #0A4A2B; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer">In de kostprijs</button>
+<button type="button" data-act="pickKosten" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #0B1F15; background: #FFFFFF; border: 1px solid #0A4A2B; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer">Als kosten</button>
+</div>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">Dit soort vragen komt normaal pas boven als het systeem al gebouwd is. Hier beantwoord je ze in het eerste gesprek.</p>
+</div>
+</div>
+
+<div data-if="isStep3" hidden>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Vastgelegd in je blauwdruk.</p>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px">Korting van de leverancier komt per regel mee.</span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span></li>
+<li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px">Jouw klantnummer bij de leverancier krijgt een eigen veld.</span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #E8ECEA; color: #2A3830">Instelling</span></li>
+<li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px; font-weight: 600"><span id="choice">Verzekering boek je als kosten, niet in de kostprijs.</span></span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #DCE9E1; color: #0A4A2B">Jouw besluit</span></li>
+<li style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 14px 0; border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5"><span style="flex: 1 1 320px; font-size: 16px">De factuur koppelt zichzelf aan de bestelling.</span><span style="font-size: 13px; font-weight: 600; border-radius: 999px; padding: 6px 12px; background: #0B1F15; color: #FFFFFF">Maatwerk, in de prijs</span></li>
+</ol>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<p style="margin: 0; max-width: 560px; font-size: 16px; color: #3B4A42">Uit deze blauwdruk komt alles: wat we bouwen, waarop we testen en je vaste prijs. Wat jij hier verandert, verandert het systeem.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" data-act="reset" style="font-family: inherit; font-size: 16px; font-weight: 600; color: #0B1F15; background: #FFFFFF; border: 1px solid #C5CFC9; border-radius: 999px; padding: 14px 22px; min-height: 48px; cursor: pointer">Opnieuw</button>
+<a href="#start" style="display: flex; align-items: center; font-size: 16px; font-weight: 600; text-decoration: none; color: #FFFFFF; background: #0A4A2B; border-radius: 999px; padding: 0 24px; min-height: 48px">Doe dit met mijn bedrijf</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<p style="margin: 0; padding: 14px 28px; border-top: 1px solid #E3E9E5; font-size: 14px; color: #55655C">Voorbeeld met verzonnen gegevens. Dit is een schets en niet het systeem zelf, maar alles wat je ziet kan het systeem ook echt.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 112px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(5rem, 12vw, 9rem); line-height: 0.9; letter-spacing: -0.04em; color: #0A4A2B">71</p>
+<p style="margin: 0; font-size: 18px; font-weight: 500; max-width: 360px">besluiten kwamen bij onze laatste implementatie nog boven tafel. Na een compleet interview.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance">Niemand kan zijn eigen proces beschrijven. Je herkent het pas als je het ziet.</h2>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Bijna al die besluiten kwamen door iets wat de klant voor zich zag: een scherm, een prijskaartje, een bankafschrift. Geen enkele vragenlijst had ze gevonden.</p>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Daarom draaien wij het om. Je ziet eerst je bedrijf werken. Wat je mist of anders wilt, zeg je meteen. Pas daarna komt de prijs, en pas daarna bouwen we.</p>
+</div>
+</section>
+
+<section id="hoe" style="background: #F4F7F5; padding: 96px 0">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Hoe het werkt</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Vier stappen. Bij stap drie weet je de prijs.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 16px; font-weight: 600; color: #B00208">1</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.15">Vertel</h3>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">Eén gesprek over hoe een bestelling, een inkoop en een factuur bij jou lopen. Je stuurt een paar documenten mee, een foto via WhatsApp is genoeg.</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 16px; font-weight: 600; color: #B00208">2</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.15">Klik het door</h3>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">In een uur loop je je werkdag door, per rol. Bij elke stap: klopt dit, wat als het anders loopt, wat mis je? Elk antwoord leggen we direct vast.</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 16px; font-weight: 600; color: #B00208">3</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.15">Eén vaste prijs</h3>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">Aan het eind van dezelfde sessie. Voor precies wat je net hebt gezien, maatwerk inbegrepen. Geen uurtje factuurtje.</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 16px; font-weight: 600; color: #B00208">4</p>
+<h3 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.15">Live in weken</h3>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">We bouwen wat je hebt doorgeklikt en testen het op dezelfde routes. Daarna een generale repetitie bij jou, met je eigen printers, kassa en scanner.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="voorwie" style="max-width: 1120px; margin: 0 auto; padding: 112px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Voor wie</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Bedrijven die inkopen, opslaan en verkopen.</h2>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Groothandel, import, winkels en webshops. Inkoop, voorraad, verkoop, kassa, webshop en boekhouding komen in één systeem. Alles wat je niet gebruikt, halen we weg.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 0">
+<p style="margin: 0; padding: 20px 0; border-top: 1px solid #E3E9E5; font-size: 18px; font-weight: 500">De voorraad staat in Excel en klopt nooit helemaal.</p>
+<p style="margin: 0; padding: 20px 0; border-top: 1px solid #E3E9E5; font-size: 18px; font-weight: 500">Elke klant heeft eigen prijzen en kortingen.</p>
+<p style="margin: 0; padding: 20px 0; border-top: 1px solid #E3E9E5; font-size: 18px; font-weight: 500">De webshop en de administratie praten niet met elkaar.</p>
+<p style="margin: 0; padding: 20px 0; border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5; font-size: 18px; font-weight: 500">Je hebt al een ERP, maar elke aanpassing is een project met een offerte waar je van schrikt.</p>
+</div>
+</section>
+
+<section style="background: #0B1F15; color: #FFFFFF; padding: 96px 0">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; max-width: 760px; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance">Een ERP-traject hoeft geen jaar en een vermogen te kosten.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
+<div style="border: 1px solid #2C4136; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B8B0">Klassiek traject</h3>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px; color: #D3DCD7">
+<li>Je ziet het systeem pas bij de oplevering</li>
+<li>Maanden tot een jaar doorlooptijd</li>
+<li>Uren op nacalculatie, budget loopt uit</li>
+<li>Maatwerk is een nieuw project</li>
+</ul>
+</div>
+<div style="background: #FFFFFF; color: #0B1F15; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0A4A2B">Forthnight</h3>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px; font-weight: 500">
+<li>Je klikt het door voordat je tekent</li>
+<li>Live in weken</li>
+<li>Eén vaste prijs, vooraf afgesproken</li>
+<li>Maatwerk zit erin, gebouwd met AI</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Wie erachter zit" style="max-width: 1120px; margin: 0 auto; padding: 112px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Waarom wij</p>
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Wij deden het eerst zelf.</h2>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Forthnight komt voort uit een groothandel die deze stap zelf heeft gezet. We weten hoe een magazijn op maandagochtend draait, en wat er misgaat als het systeem niet meewerkt.</p>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Waar we naartoe gaan: een ERP opzetten wordt net zo simpel als vertellen hoe je werkt. We beginnen concreet, met elke klant persoonlijk.</p>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5">
+<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">D</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Dennis</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Doet je intake en bouwt je systeem. Leidde de overstap naar één systeem bij de groothandel waar we vandaan komen.</p>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5">
+<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">D</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Derk</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Kent de dagelijkse gang van zaken in een groothandel. Controleert elke blauwdruk voordat jij hem ziet.</p>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5">
+<span aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 999px; background: #0A4A2B; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 22px; font-weight: 600">K</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Koen</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Kent de klantkant van de handel van binnenuit. Je eerste aanspreekpunt.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="vragen" style="max-width: 880px; margin: 0 auto; padding: 0 24px 112px; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Vragen</h2>
+<div style="display: flex; flex-direction: column">
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Wat kost het?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Je krijgt één vaste prijs aan het eind van de sessie waarin je alles hebt doorgeklikt. Die hangt af van wat jouw bedrijf nodig heeft, daarom staat hier geen bedrag. Tot dat moment kost het je niets.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Is wat ik doorklik het echte systeem?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Nee, het is een schets, en dat staat er ook op. Hij is wel opgebouwd uit wat het systeem kan. Wat we nog moeten bouwen staat erbij, met of het in de prijs zit. We laten niets zien wat we niet kunnen leveren.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Moet ik meteen documenten delen?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Nee. Je begint met een paar zinnen. Documenten stuur je pas na een eerste gesprek, en alleen wat nodig is. We gebruiken ze uitsluitend om jouw systeem in te richten.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Op welk systeem draait het?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Op Odoo, bedrijfssoftware die wereldwijd wordt gebruikt. Licentie en hosting neem je rechtstreeks bij Odoo af. Het systeem en de data zijn van jou, je zit niet aan ons vast.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Ik heb al een ERP. Kan dat?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Ja. We kijken wat goed werkt en wat je tegenhoudt. Je bestaande webshop kan gekoppeld blijven. Wat vroeger "kan niet" was, bouwen we nu gewoon.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe kan het zo snel?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Het bouwwerk doet AI, vanuit een blauwdruk die jij zelf hebt doorgeklikt. Mensen controleren elke stap. De tijd zit in jouw bedrijf goed begrijpen, niet in handwerk.</p>
+</div>
+<div style="border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">En na de livegang?</h3>
+<p style="margin: 0; font-size: 17px; color: #3B4A42">Dan kun je terecht bij hulp die jouw inrichting kent en in gewone taal antwoordt. Een nieuwe wens beschrijf je in gewone taal en krijgt een eigen vaste prijs.</p>
+</div>
+</div>
+</section>
+
+<section style="background: #0B1F15; color: #FFFFFF; padding: 112px 24px">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.4vw, 4rem); line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance">Eerst zien. Dan pas tekenen.</h2>
+<p style="margin: 0; font-size: 19px; color: #D3DCD7">Een paar zinnen over je bedrijf is genoeg om te beginnen.</p>
+<a href="#start" style="font-size: 17px; font-weight: 600; text-decoration: none; color: #0B1F15; background: #FFFFFF; padding: 16px 28px; border-radius: 999px">Vertel hoe je werkt</a>
+</div>
+</section>
+</main>
+
+<footer style="max-width: 1120px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #55655C">
+<p style="margin: 0">Forthnight Agency is een handelsnaam van Parallax Studio, 's-Hertogenbosch. KvK 99629119.</p>
+<p style="margin: 0"><a href="mailto:dennis@forthnightagency.com">dennis@forthnightagency.com</a> <span aria-hidden="true">·</span> <a href="privacy/">Privacy</a></p>
+</footer>
+
+</div>
+<script>
+(function () {
+  // Formspree-endpoint. Moet gelijk zijn aan het action-attribuut van het formulier (voor bezoekers zonder JavaScript).
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/VERVANG_MIJ';
+  var CONTACT_EMAIL = 'dennis@forthnightagency.com';
+  var ACCENT = '#0A4A2B';
+  var step = 0;
+  var texts = {
+    kostprijs: 'Verzekering telt mee in de kostprijs van de artikelen.',
+    kosten: 'Verzekering boek je als kosten, niet in de kostprijs.'
+  };
+  function show(name, on) {
+    var el = document.querySelector('[data-if="' + name + '"]');
+    if (el) el.hidden = !on;
+  }
+  function render() {
+    for (var i = 0; i < 4; i++) {
+      show('isStep' + i, i === step);
+      var pill = document.querySelector('[data-pill="' + i + '"]');
+      var c = i === step ? [ACCENT, '#FFFFFF', ACCENT] : i < step ? ['#DCE9E1', ACCENT, '#DCE9E1'] : ['#FFFFFF', '#55655C', '#D5DDD8'];
+      pill.style.background = c[0];
+      pill.style.color = c[1];
+      pill.style.borderColor = c[2];
+      if (i === step) pill.setAttribute('aria-current', 'step'); else pill.removeAttribute('aria-current');
+    }
+  }
+  var actions = {
+    start: function (btn) { show('started', true); btn.textContent = 'Verstuur'; btn.dataset.act = 'send'; document.getElementById('naam').focus(); },
+    next: function () { step = Math.min(step + 1, 3); render(); },
+    pickKostprijs: function () { document.getElementById('choice').textContent = texts.kostprijs; step = 3; render(); },
+    pickKosten: function () { document.getElementById('choice').textContent = texts.kosten; step = 3; render(); },
+    reset: function () { step = 0; render(); }
+  };
+  document.addEventListener('click', function (e) {
+    var chip = e.target.closest('[data-chip]');
+    if (chip) { var t = document.getElementById('intake'); t.value = chip.dataset.chip; t.focus(); return; }
+    var btn = e.target.closest('[data-act]');
+    if (btn && actions[btn.dataset.act]) {
+      if (btn.dataset.act === 'start') e.preventDefault();
+      actions[btn.dataset.act](btn);
+    }
+  });
+  render();
+
+  var form = document.getElementById('start');
+  var statusEl = document.getElementById('form-status');
+  var sendBtn = form.querySelector('button[type="submit"]');
+  var required = [
+    ['intake', 'Vertel in een paar zinnen hoe je bedrijf werkt.'],
+    ['naam', 'Vul je naam in.'],
+    ['email', 'Vul een geldig e-mailadres in.']
+  ];
+  function setStatus(kind, html) {
+    statusEl.className = 'form-status' + (kind ? ' is-' + kind : '');
+    statusEl.innerHTML = html;
+    statusEl.hidden = !html;
+  }
+  function validate() {
+    var first = null, messages = [];
+    required.forEach(function (r) {
+      var el = document.getElementById(r[0]);
+      var ok = el.value.trim() !== '' && el.checkValidity();
+      if (ok) el.removeAttribute('aria-invalid'); else { el.setAttribute('aria-invalid', 'true'); messages.push(r[1]); if (!first) first = el; }
+    });
+    if (first) { setStatus('error', messages.join(' ')); first.focus(); return false; }
+    setStatus('', '');
+    return true;
+  }
+  function done() {
+    Array.prototype.forEach.call(form.children, function (child) { if (child !== statusEl) child.hidden = true; });
+    setStatus('done', '<strong>Bedankt, je bericht is binnen.</strong>Je krijgt binnen één werkdag een reactie, per mail of telefoon.');
+    statusEl.focus();
+  }
+  function failed() {
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'Verstuur';
+    setStatus('error', 'Versturen is niet gelukt. Probeer het opnieuw, of mail je bericht naar <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>.');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sendBtn.dataset.act === 'start') { actions.start(sendBtn); return; }
+    if (!validate()) return;
+    if (form.elements._gotcha.value) { done(); return; }
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Bezig met versturen';
+    fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); done(); })
+      .catch(failed);
+  });
+})();
+</script>
+</body>
+</html>

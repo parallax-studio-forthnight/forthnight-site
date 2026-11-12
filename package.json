@@ -1,0 +1,17 @@
+{
+  "name": "forthnight-site",
+  "private": true,
+  "scripts": {
+    "serve": "node tests/server.js",
+    "test": "playwright test",
+    "shots": "node tests/shots.js",
+    "lighthouse": "node tests/lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "chrome-launcher": "^1.2.3",
+    "lighthouse": "^13.6.0",
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0"
+  }
+}
