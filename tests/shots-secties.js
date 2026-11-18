@@ -33,6 +33,8 @@ const secties = [
         console.log(w, naam, await l.count());
         await l.screenshot({ path: path.join(out, `${w}-${naam}.png`) });
       }
+      await page.locator('#vragen summary').first().click();
+      await page.locator('#vragen').screenshot({ path: path.join(out, `${w}-vragen-open.png`) });
       await ctx.close();
     }
   } finally { await browser.close(); server.kill(); }

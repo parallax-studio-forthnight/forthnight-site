@@ -20,7 +20,12 @@ p,li,label{text-wrap:pretty}
 #start,#vragen{scroll-margin-top:24px}
 [data-demo]{scroll-margin-top:16px}
 [data-step-head]:focus,[data-step-head]:focus-visible{outline:none}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(#0A4A2B,#0A4A2B) center/100% 2px no-repeat,linear-gradient(#0A4A2B,#0A4A2B) center/2px 100% no-repeat;transition:background-size .2s}
+.faq details[open] summary{padding-bottom:8px}
+.faq details[open] summary::after{background-size:100% 2px,2px 0}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.faq summary::after{transition:none}}
 </style>
 </head>
 <body>
@@ -39,9 +44,9 @@ p,li,label{text-wrap:pretty}
 </header>
 
 <section id="top" style="max-width: 920px; margin: 0 auto; padding: 88px 24px 104px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">ERP voor handel en retail</p>
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Bedrijfssoftware voor handel en retail</p>
 <h1 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2.5rem, 6.4vw, 4.75rem); line-height: 1.02; letter-spacing: -0.035em; color: #0B1F15; text-wrap: balance">Zie je bedrijf werken voordat je tekent.</h1>
-<p style="margin: 0; max-width: 660px; font-size: 20px; color: #3B4A42; text-wrap: pretty">Wij bouwen je bedrijfssoftware precies zoals jij werkt. Je klikt eerst door je eigen werkdag, met je eigen klanten, artikelen en facturen. Klopt het, dan krijg je één vaste prijs en ben je in weken live.</p>
+<p style="margin: 0; max-width: 660px; font-size: 20px; color: #3B4A42; text-wrap: pretty">Wij bouwen je bedrijfssoftware precies zoals jij werkt. Klik eerst door je eigen werkdag, daarna één vaste prijs en in weken live.</p>
 
 <div id="start" style="width: 100%; max-width: 720px; margin-top: 16px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5DDD8; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px; text-align: left; box-shadow: 0 24px 60px rgba(11, 31, 21, 0.10)">
 <label for="intake" style="font-size: 15px; font-weight: 600; color: #0B1F15">Hoe werkt jouw bedrijf nu?</label>
@@ -232,7 +237,7 @@ p,li,label{text-wrap:pretty}
 <div style="background: #FFFFFF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 16px; font-weight: 600; color: #B00208">4</p>
 <h3 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-size: 26px; font-weight: 600; line-height: 1.15">Live in weken</h3>
-<p style="margin: 0; font-size: 16px; color: #3B4A42">We bouwen wat je hebt doorgeklikt en testen het op dezelfde routes. Daarna een generale repetitie bij jou, met je eigen printers, kassa en scanner.</p>
+<p style="margin: 0; font-size: 16px; color: #3B4A42">We bouwen op Odoo, bedrijfssoftware die wereldwijd wordt gebruikt. Daarbovenop maken we wat jouw bedrijf anders doet. We bouwen wat je hebt doorgeklikt en testen het op dezelfde routes. Daarna een generale repetitie bij jou, met je eigen printers, kassa en scanner.</p>
 </div>
 </div>
 </div>
@@ -254,17 +259,19 @@ p,li,label{text-wrap:pretty}
 
 <section style="background: #0B1F15; color: #FFFFFF; padding: 96px 0">
 <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
 <h2 style="margin: 0; max-width: 760px; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance">Maatwerk was duur en traag. Dat is voorbij.</h2>
+<p style="margin: 0; max-width: 640px; font-size: 18px; color: #D3DCD7">Vroeger paste jij je aan de software aan, omdat maatwerk onbetaalbaar was. Nu bouwt AI het in dagen, en past de software zich aan jou aan.</p>
+</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
 <div style="border: 1px solid #2C4136; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
 <h3 style="margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B8B0">Klassiek traject</h3>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px; color: #D3DCD7">
 <li>Je ziet het systeem pas bij de oplevering</li>
 <li>Maanden tot een jaar doorlooptijd</li>
-<li>Uren op nacalculatie, budget loopt uit</li>
 <li>Maatwerk is een nieuw project</li>
 <li>Een offerte die je moet geloven</li>
-<li>Al snel rond €&nbsp;35.000</li>
+<li>Rond €&nbsp;35.000, op nacalculatie</li>
 </ul>
 </div>
 <div style="background: #FFFFFF; color: #0B1F15; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
@@ -272,10 +279,9 @@ p,li,label{text-wrap:pretty}
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px; font-weight: 500">
 <li>Je klikt het door voordat je tekent</li>
 <li>Live in weken</li>
-<li>Eén vaste prijs, vooraf afgesproken</li>
-<li>Maatwerk zit erin, gebouwd met AI</li>
+<li>Maatwerk zit in de prijs, gebouwd met AI</li>
 <li>Een offerte die je kunt doorklikken</li>
-<li>Rond €&nbsp;8.000 voor een vergelijkbaar traject</li>
+<li>Rond €&nbsp;8.000, vaste prijs</li>
 </ul>
 </div>
 </div>
@@ -287,7 +293,7 @@ p,li,label{text-wrap:pretty}
 <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A4A2B">Waarom wij</p>
 <h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Wij deden het eerst zelf.</h2>
 <p style="margin: 0; font-size: 18px; color: #3B4A42">Forthnight komt voort uit 20|20 Supplies, een groothandel die deze stap zelf heeft gezet. We weten hoe een magazijn op maandagochtend draait, en wat er misgaat als het systeem niet meewerkt.</p>
-<p style="margin: 0; font-size: 18px; color: #3B4A42">Waar we naartoe gaan: een ERP opzetten wordt net zo simpel als vertellen hoe je werkt. We beginnen concreet, met elke klant persoonlijk.</p>
+<p style="margin: 0; font-size: 18px; color: #3B4A42">Waar we naartoe gaan: bedrijfssoftware opzetten wordt net zo simpel als vertellen hoe je werkt. We beginnen concreet, met elke klant persoonlijk.</p>
 <p style="margin: 0; font-size: 14px; color: #55655C">Draait bij 20|20 Supplies. In aanbouw bij Voskuil Aalten.</p>
 </div>
 <div style="display: flex; flex-direction: column">
@@ -314,47 +320,39 @@ p,li,label{text-wrap:pretty}
 
 <section id="vragen" style="max-width: 880px; margin: 0 auto; padding: 0 24px 112px; display: flex; flex-direction: column; gap: 32px">
 <h2 style="margin: 0; font-family: 'Space Grotesk', Inter, sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em">Vragen</h2>
-<div style="display: flex; flex-direction: column">
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Wat kost het?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Je krijgt één vaste prijs voor precies wat je hebt doorgeklikt. Ter vergelijking: een traject dat bij een klassieke partij al snel rond €&nbsp;35.000 kost, doen wij voor rond €&nbsp;8.000. Het precieze bedrag hangt af van wat jouw bedrijf nodig heeft. Tot dat moment kost het je niets.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe ziet de offerte eruit?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Als een link. Je klikt door je eigen bestellingen, facturen en voorraad, per persoon in je bedrijf. Zie je iets wat niet klopt of mis je iets, dan schrijf je het onder dat scherm. Pas als het klopt, teken je.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Wat hebben jullie van mij nodig?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Je artikelen, klanten, prijzen, voorraad en openstaande posten, in de vorm waarin je ze nu hebt. Een export of een Excel is genoeg. Opschonen en omzetten doen wij. Waar een keuze nodig is, leggen we die aan je voor.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Waar draait jullie bouwwerk?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Op een eigen server in Finland, in een datacenter dat volledig op wind- en waterkracht draait. Daar bouwen en testen we je systeem voordat het live gaat.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Is wat ik doorklik het echte systeem?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Nee, het is een proefversie, en dat staat er ook op. Hij is wel opgebouwd uit wat het systeem kan. Wat we nog moeten bouwen staat erbij, met of het in de prijs zit. We laten niets zien wat we niet kunnen leveren.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Moet ik meteen documenten delen?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Nee. Je begint met een paar zinnen. Documenten stuur je pas na een eerste gesprek, en alleen wat nodig is. We gebruiken ze uitsluitend om jouw systeem in te richten.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Op welk systeem draait het?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Op Odoo, bedrijfssoftware die wereldwijd wordt gebruikt. Licentie en hosting neem je rechtstreeks bij Odoo af. Het systeem en de data zijn van jou, je zit niet aan ons vast.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Ik heb al een ERP. Kan dat?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Ja. We kijken wat goed werkt en wat je tegenhoudt. Je bestaande webshop kan gekoppeld blijven. Wat vroeger “kan niet” was, bouwen we nu gewoon.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe kan het zo snel?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Maatwerk kostte vroeger weken programmeren, dus kreeg je standaardsoftware en paste jij je aan. Nu bouwt AI het, vanuit een blauwdruk die jij zelf hebt doorgeklikt. Mensen controleren elke stap. Daardoor krijg je software die past bij hoe jij werkt, in weken en voor een vaste prijs.</p>
-</div>
-<div style="border-top: 1px solid #E3E9E5; border-bottom: 1px solid #E3E9E5; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 19px; font-weight: 600">En na de livegang?</h3>
-<p style="margin: 0; font-size: 17px; color: #3B4A42">Dan kun je terecht bij hulp die jouw inrichting kent en in gewone taal antwoordt. Een nieuwe wens beschrijf je in gewone taal en krijgt een eigen vaste prijs.</p>
-</div>
+<div class="faq" style="display: flex; flex-direction: column; border-bottom: 1px solid #E3E9E5">
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Wat kost het?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Eén vaste prijs voor precies wat je hebt doorgeklikt. Ter vergelijking: waar een klassieke partij al snel rond €&nbsp;35.000 vraagt, zitten wij rond €&nbsp;8.000. Tot je tekent kost het niets.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe ziet de offerte eruit?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Als een link. Je klikt door je eigen bestellingen, facturen en voorraad, per persoon in je bedrijf. Het is een proefversie en niet het echte systeem, maar alles wat je ziet kunnen we ook leveren. Wat we nog moeten bouwen staat erbij. Mis je iets, dan schrijf je het onder dat scherm. Pas als het klopt, teken je.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Wat hebben jullie van mij nodig?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Om te beginnen een paar zinnen. Daarna je artikelen, klanten, prijzen, voorraad en openstaande posten, in de vorm waarin je ze nu hebt. Een export of een Excel is genoeg. Opschonen en omzetten doen wij. Waar een keuze nodig is, leggen we die aan je voor.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Waar draait jullie bouwwerk?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Op een eigen server in Finland, in een datacenter dat volledig op wind- en waterkracht draait. Daar bouwen en testen we je systeem voordat het live gaat.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Op welk systeem draait het?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Op Odoo, bedrijfssoftware die wereldwijd wordt gebruikt. Licentie en hosting neem je rechtstreeks bij Odoo af. Het systeem en de data zijn van jou, je zit niet aan ons vast.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Ik heb al een ERP. Kan dat?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Ja. We kijken wat goed werkt en wat je tegenhoudt. Je bestaande webshop kan gekoppeld blijven. Wat vroeger “kan niet” was, bouwen we nu gewoon.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">Hoe kan het zo snel?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Maatwerk kostte vroeger weken programmeren, dus kreeg je standaardsoftware en paste jij je aan. Nu bouwt AI het, vanuit een blauwdruk die jij zelf hebt doorgeklikt. Mensen controleren elke stap. Daardoor krijg je software die past bij hoe jij werkt, in weken en voor een vaste prijs.</p>
+</details>
+<details style="border-top: 1px solid #E3E9E5">
+<summary><h3 style="margin: 0; font-size: 19px; font-weight: 600">En na de livegang?</h3></summary>
+<p style="margin: 0; padding-bottom: 24px; font-size: 17px; color: #3B4A42">Dan kun je terecht bij hulp die jouw inrichting kent en in gewone taal antwoordt. Een nieuwe wens beschrijf je in gewone taal en krijgt een eigen vaste prijs.</p>
+</details>
 </div>
 </section>
 

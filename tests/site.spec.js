@@ -225,7 +225,7 @@ test.describe('desktop 1440', () => {
     await page.locator('form#start button[type="submit"]').click();
     await demo.goto(page, 'step2');
     const total = await page.evaluate(() => {
-      const els = [...document.querySelectorAll('a[href], button, input:not([type="hidden"]), textarea, select')]
+      const els = [...document.querySelectorAll('a[href], button, summary, input:not([type="hidden"]), textarea, select')]
         .filter((el) => el.tabIndex >= 0 && el.getClientRects().length > 0 && !el.disabled);
       els.forEach((el, i) => { el.dataset.tabIndexTest = String(i); });
       document.activeElement.blur();
@@ -242,6 +242,29 @@ test.describe('desktop 1440', () => {
     expect(seen.size).toBe(total);
     const honeypot = await page.evaluate(() => document.getElementById('website').tabIndex);
     expect(honeypot).toBe(-1);
+  });
+
+  test('vragen: alles dicht, antwoord verschijnt bij klik en bij Enter, ook zonder JavaScript', async ({ page, browser, baseURL }) => {
+    await ready(page);
+    const items = page.locator('#vragen details');
+    await expect(items).toHaveCount(8);
+    expect(await page.locator('#vragen details[open]').count()).toBe(0);
+    expect(await page.locator('#vragen details > p:visible').count()).toBe(0);
+    await items.nth(0).locator('summary').click();
+    await expect(items.nth(0).locator('p')).toBeVisible();
+    await items.nth(1).locator('summary').focus();
+    await page.keyboard.press('Enter');
+    await expect(items.nth(1).locator('p')).toBeVisible();
+    await page.keyboard.press('Enter');
+    await expect(items.nth(1).locator('p')).toBeHidden();
+    const hoogte = await items.nth(2).locator('summary').evaluate((el) => el.getBoundingClientRect().height);
+    expect(hoogte).toBeGreaterThanOrEqual(44);
+    const ctx = await browser.newContext({ javaScriptEnabled: false });
+    const kaal = await ctx.newPage();
+    await kaal.goto(baseURL + '/');
+    await kaal.locator('#vragen summary').first().click();
+    await expect(kaal.locator('#vragen details').first().locator('p')).toBeVisible();
+    await ctx.close();
   });
 
   test('favicon, og-afbeelding, robots, sitemap en privacy bestaan; head-tags kloppen', async ({ page, request }) => {
