@@ -53,8 +53,14 @@ p,li,label{text-wrap:pretty}
 .form-status:focus{outline:none}
 [aria-invalid="true"]{border-color:#B00208 !important}
 textarea[aria-invalid="true"]{outline:2px solid #B00208}
+@media (pointer: coarse), (max-width: 639px){
+footer a{display:inline-block;padding:12px 0}
+}
 @media (max-width: 639px){
-header{flex-wrap:nowrap !important}
+header{flex-wrap:nowrap !important;position:sticky;top:0;z-index:20;box-sizing:border-box;height:64px;padding:0 24px !important;background:#FFFFFF;border-bottom:1px solid #E3E9E5}
+#top,#voorbeeld,#hoe{scroll-margin-top:64px}
+#start,#vragen{scroll-margin-top:88px}
+[data-demo]{scroll-margin-top:80px}
 header img{height:40px !important}
 header nav{flex-wrap:nowrap !important}
 header nav a:not([href="#start"]){display:none !important}
@@ -74,7 +80,7 @@ p[style*="font-size: 26px"]{font-size:22px !important}
 
 <header style="max-width: 1120px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#top" aria-label="Forthnight, naar boven" style="display: flex; align-items: center">
-<img src="assets/forthnight-logo.png" alt="Forthnight" width="1026" height="570" style="height: 52px; width: auto; display: block">
+<img src="assets/forthnight-logo.png" alt="Forthnight" width="216" height="120" style="height: 52px; width: auto; display: block">
 </a>
 <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
 <a href="#voorbeeld" style="font-size: 15px; font-weight: 500; text-decoration: none; color: #3B4A42; padding: 12px 0">Probeer het</a>
@@ -133,6 +139,7 @@ p[style*="font-size: 26px"]{font-size:22px !important}
   f.noValidate = true;
 })();
 </script>
+<a href="#voorbeeld" style="display: inline-block; padding: 12px 0; font-size: 16px; font-weight: 500; color: #0A4A2B">Bekijk eerst een voorbeeld</a>
 </section>
 
 <section id="voorbeeld" style="background: #F4F7F5; padding: 96px 0">
@@ -458,7 +465,9 @@ p[style*="font-size: 26px"]{font-size:22px !important}
   function reveal() {
     var card = document.querySelector('[data-demo]');
     var head = document.querySelector('[data-if="isStep' + step + '"] [data-step-head]');
-    var above = card && card.getBoundingClientRect().top < 0;
+    var kop = document.querySelector('header');
+    var onder = kop && getComputedStyle(kop).position === 'sticky' ? kop.getBoundingClientRect().height : 0;
+    var above = card && card.getBoundingClientRect().top < onder;
     if (above) card.scrollIntoView({ block: 'start' });
     if (head) head.focus({ preventScroll: above });
   }

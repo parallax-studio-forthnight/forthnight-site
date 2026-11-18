@@ -396,9 +396,9 @@ test.describe('pixelvergelijking met design/index.v3.html op 1440 px', () => {
   }
 });
 
-for (const width of [390, 360]) {
-  test.describe(`mobiel ${width} px`, () => {
-    test.use({ viewport: { width, height: 800 } });
+for (const [width, height] of [[390, 844], [375, 812], [360, 800]]) {
+  test.describe(`mobiel ${width}x${height}`, () => {
+    test.use({ viewport: { width, height } });
 
     test('header: alleen logo (40 px) en Start op één regel', async ({ page }) => {
       await ready(page);
@@ -499,7 +499,7 @@ for (const width of [390, 360]) {
       const card = page.locator('[data-demo]');
       const head = (i) => page.locator(`[data-if="isStep${i}"] [data-step-head]`);
       const cardTop = async () => Math.round((await card.boundingBox()).y);
-      expect(await card.evaluate((el) => getComputedStyle(el).scrollMarginTop)).toBe('16px');
+      expect(await card.evaluate((el) => getComputedStyle(el).scrollMarginTop)).toBe('80px'); // 64 px vaste header plus 16 px lucht
       const stappen = [['Lees de voorbeeldfactuur uit', 1], ['Verder', 2], ['Als kosten', 3], ['Opnieuw', 0]];
       for (const [knop, i] of stappen) {
         const btn = page.getByRole('button', { name: knop });
@@ -510,7 +510,7 @@ for (const width of [390, 360]) {
         await btn.click();
         await expect(head(i)).toBeFocused();
         await expect(head(i)).toBeInViewport({ ratio: 1 });
-        if (before < 0) expect(await cardTop(), `kaart na "${knop}"`).toBe(16);
+        if (before < 64) expect(await cardTop(), `kaart na "${knop}"`).toBe(80);
         expect(await head(i).evaluate((el) => getComputedStyle(el).outlineStyle)).toBe('none');
         expect(await head(i).getAttribute('tabindex')).toBe('-1');
       }
@@ -522,7 +522,43 @@ for (const width of [390, 360]) {
       await verder.click();
       await expect(head(2)).toBeInViewport({ ratio: 1 });
       await expect(head(2)).toBeFocused();
-      expect(await cardTop()).toBe(16);
+      expect(await cardTop()).toBe(80);
+    });
+
+    test('vaste header: logo en Start blijven in beeld, ankers vallen er niet onder', async ({ page }) => {
+      await ready(page);
+      const header = page.locator('header');
+      expect(await header.evaluate((el) => getComputedStyle(el).position)).toBe('sticky');
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      const h = await header.boundingBox();
+      expect(Math.round(h.y)).toBe(0);
+      expect(h.height).toBe(64);
+      await expect(page.locator('header img')).toBeInViewport({ ratio: 1 });
+      const start = page.locator('header nav a[href="#start"]');
+      await expect(start).toBeInViewport({ ratio: 1 });
+      expect((await start.boundingBox()).height).toBeGreaterThanOrEqual(44);
+      for (const id of ['voorbeeld', 'hoe', 'vragen', 'start', 'top']) {
+        await page.evaluate((x) => { location.hash = ''; location.hash = x; }, id);
+        await page.waitForFunction((x) => { const r = document.getElementById(x).getBoundingClientRect(); return r.top >= 63.5 && r.top < 200; }, id);
+        const top = await page.locator('#' + id).evaluate((el) => el.getBoundingClientRect().top);
+        expect(top, id).toBeGreaterThanOrEqual(63.5);
+      }
+      await page.locator('header nav a[href="#start"]').click();
+      await expect(page.locator('#intake')).toBeInViewport({ ratio: 1 });
+      expect(await page.locator('form#start').evaluate((el) => el.getBoundingClientRect().top)).toBeGreaterThanOrEqual(64);
+    });
+
+    test('link naar het voorbeeld onder het formulier en footerlinks van minstens 44 px hoog', async ({ page }) => {
+      await ready(page);
+      const link = page.locator('#top').getByRole('link', { name: 'Bekijk eerst een voorbeeld' });
+      await expect(link).toHaveAttribute('href', '#voorbeeld');
+      expect((await link.boundingBox()).height).toBeGreaterThanOrEqual(44);
+      expect((await link.boundingBox()).y).toBeGreaterThan((await page.locator('form#start').boundingBox()).y);
+      await link.click();
+      await page.waitForFunction(() => Math.abs(document.getElementById('voorbeeld').getBoundingClientRect().top - 64) < 2);
+      for (const a of await page.locator('footer a').all()) expect((await a.boundingBox()).height, await a.innerText()).toBeGreaterThanOrEqual(44);
+      const logo = page.locator('header img');
+      expect(await logo.evaluate((img) => img.naturalWidth)).toBeLessThanOrEqual(216);
     });
 
     test('demo: staat de kaart al in beeld, dan verspringt de pagina niet', async ({ page }) => {
